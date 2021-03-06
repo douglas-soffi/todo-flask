@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/static/bootstrap/bootstrap.min.css">
     <title>Todo Flask</title>
 </head>
-<body>
+<body class="bckgr">
     <h1>To Do App</h1>
     <section>
         <div class="td-container">
@@ -24,17 +24,17 @@
             <hr>
             
             {% for todo in todo_list %}
-            <div >
+            <div class="todo-list my-2 shadow">
                 <p >{{todo.id }} | {{ todo.title }}</p>
                 
                 {% if todo.complete == False %}
-                <span >Not Complete</span>
+                <span class="btn btn-outline-secondary">Not Complete</span>
                 {% else %}
-                <span >Completed</span>
+                <span class="btn btn-outline-secondary">Completed</span>
                 {% endif %}
                 
-                <a  href="/update/{{ todo.id }}">Update</a>
-                <a  href="/delete/{{ todo.id }}">Delete</a>
+                <a class="btn btn-outline-info" href="/update/{{ todo.id }}">Update</a>
+                <a class="btn btn-outline-danger" href="/delete/{{ todo.id }}">Delete</a>
             </div>
             {% endfor %}
         </div>
