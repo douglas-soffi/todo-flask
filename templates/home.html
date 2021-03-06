@@ -4,11 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" type="text/css" href="/0static/bootstrap/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" href="/static/styles/home.css">
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/bootstrap.min.css">
     <title>Todo Flask</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>To Do App</h1>
+    <section>
+        <div class="td-container">
+            <article class="tudotitle">
+                <form action="/add" method="post">
+                    <div class="d-flex flex-column">
+                        <label>Todo Title</label>
+                        <input type="text" name="title" class="form-control" placeholder="Enter Todo..."><br>
+                    </div>
+                    <button class="btn btn-outline-info" type="submit">Add</button>
+                </form>
+            </article>
+            <hr>
+            
+            {% for todo in todo_list %}
+            <div >
+                <p >{{todo.id }} | {{ todo.title }}</p>
+                
+                {% if todo.complete == False %}
+                <span >Not Complete</span>
+                {% else %}
+                <span >Completed</span>
+                {% endif %}
+                
+                <a  href="/update/{{ todo.id }}">Update</a>
+                <a  href="/delete/{{ todo.id }}">Delete</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
 </body>
 </html>
