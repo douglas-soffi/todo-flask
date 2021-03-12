@@ -3,14 +3,19 @@ h1 {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial;
 }
 
 .fundo {
     background-image: url(/static/img/wallpaper_1.jpeg);
     background-size: 100%;
-    background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.hr-white{
+    background-color: #fff;
+    height: 1px;
+    border-top: none;
 }
 
 h1 {
@@ -35,6 +40,6 @@ h1 {
     padding: 10px;
 }
 
-hr {
-    color: white;
+.borda {
+    background-color: rgba(0, 0, 0, 0.300);
 }
